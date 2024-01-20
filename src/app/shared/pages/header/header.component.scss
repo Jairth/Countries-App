@@ -1,0 +1,28 @@
+@import "../../../../styles/globals.scss";
+
+.header {
+  box-shadow: 2px 2px 4px oklch(0% 0 0 / 10%);
+  background-color: $light-mode-element;
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 1.5em;
+  }
+  &__title {
+    font-size: clamp(1rem, 0.9104rem + 0.3774vw, 1.25rem);
+    font-family: $main-family-bold;
+  }
+}
+
+.dark-mode {
+  display: flex;
+  align-items: center;
+  gap: .5em;
+  cursor: pointer;
+
+  &__text {
+    font-size: clamp(0.875rem, 0.8302rem + 0.1887vw, 1rem);
+    font-family: $main-family-semi-bold;
+  }
+}

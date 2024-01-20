@@ -1,0 +1,13 @@
+@import "../../../../styles/globals.scss";
+
+.main__wrapper {
+  display: block;
+  padding: clamp(1.875rem, 1.5389rem + 1.4151vw, 2.8125rem) 0 clamp(5rem, 5.7842rem + -3.3019vw, 2.8125rem) 0;
+}
+.search__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}

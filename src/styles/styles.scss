@@ -1,0 +1,9 @@
+/* You can add global styles to this file, and also import other style files */
+@import "./fonts.scss";
+@import "./reset.scss";
+@import "./variables/colors.scss";
+
+body {
+  font-family: $main-family-light;
+  background-color: $light-mode-background;
+}

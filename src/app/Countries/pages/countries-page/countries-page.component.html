@@ -1,0 +1,9 @@
+<main class="main">
+  <div class="main__wrapper wrapper">
+    <div class="search__wrapper">
+      <app-search-box (onDebounce)="searchByCountries($event)"/>
+      <app-filter-box (textFilter)="searchByRegion($event)"/>
+    </div>
+    <app-country-grid class="countries__grid" [listCountries]="listCountries" />
+  </div>
+</main>

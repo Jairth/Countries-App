@@ -1,0 +1,12 @@
+
+//Light Mode
+$light-mode-text: oklch(19.42% 0.008 229.32);
+$light-mode-background: oklch(98.48% 0 0);
+$light-mode-element: oklch(100% 0 0);
+$light-mode-input: oklch(61.54% 0 0);
+
+//Dark Mode
+$dark-mode-text: oklch(100% 0 0);
+$dark-mode-background: oklch(28.82% 0.025 243.46);
+$dark-mode-element: oklch(33.62% 0.028 246.95);
+$dark-mode-input: oklch(61.54% 0 0);
