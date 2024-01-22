@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CountriesService } from '../../services/countries.service';
-import { Country } from '../../interface/country';
+import { Country } from '../../interface/country.interface';
 
 
 @Component({
@@ -12,14 +12,20 @@ export class CountriesPageComponent {
   public country?:Country;
   listCountries:Country[] = [];
 
+
   constructor(
     private countriesService:CountriesService,
   ){}
 
+  ngOnInit() {
+    this.listCountries = this.countriesService.cacheStore.byCountries.countries;
+  }
+
+
   searchByCountries(term:string) {
     this.countriesService.searchCountries(term)
       .subscribe(countries => {
-        this.listCountries = countries
+        this.listCountries = countries;
       }
     )
   }
@@ -27,7 +33,7 @@ export class CountriesPageComponent {
   searchByRegion(term:string) {
     this.countriesService.searchRegions(term)
       .subscribe(countries => {
-        this.listCountries = countries
+        this.listCountries = countries;
       })
   }
 }

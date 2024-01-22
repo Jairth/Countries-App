@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, catchError, map, of } from 'rxjs';
-import { Country } from '../interface/country';
+import { Observable, catchError, map, of, tap } from 'rxjs';
+import { Country } from '../interface/country.interface';
+import { CacheStore } from '../interface/cache-store.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -9,13 +10,43 @@ import { Country } from '../interface/country';
 export class CountriesService {
   private apiUrl:string = 'https://restcountries.com/v3.1';
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient) { 
+    this.loadLocalStorage()
+  }
+
+  public cacheStore:CacheStore = {
+    byCountries: { countries: []},
+  }
+
+  private saveLocalStorage() {
+    localStorage.setItem('countries', JSON.stringify(this.cacheStore))
+  }
+
+  private loadLocalStorage() {
+    if(!localStorage.getItem('countries')) return
+    this.cacheStore = JSON.parse(localStorage.getItem('countries')!)
+  }
+
+  // clearCountriesCache() {
+  //   console.log('Antes de limpiar el caché de países:', this.cacheStore.byCountries);
+  //   this.cacheStore.byCountries = { countries: [] };
+  //   this.saveLocalStorage();
+  //   console.log('Después de limpiar el caché de países:', this.cacheStore.byCountries);
+  // }
+  
+  // clearRegionsCache() {
+  //   console.log('Antes de limpiar el caché de region:', this.cacheStore.byRegions);
+  //   this.cacheStore.byRegions = { countries: [] };
+  //   this.saveLocalStorage();
+  //   console.log('Después de limpiar el caché de region:', this.cacheStore.byRegions);
+  // }
 
   searchCountries(term:string):Observable<Country[]> {
     const url = `${this.apiUrl}/name/${term}`;
-    console.log('Llamando al servicio con término:', term);
     return this.http.get<Country[]>(url)
       .pipe(
+        tap( countries => { this.cacheStore.byCountries = { countries}}),
+        tap( () => this.saveLocalStorage()),
         catchError(() => of([]))
       )
   }
@@ -24,6 +55,8 @@ export class CountriesService {
     const url = `${this.apiUrl}/region/${term}`;
     return this.http.get<Country[]>(url)
       .pipe(
+        tap( countries => { this.cacheStore.byCountries = { countries}}),
+        tap( () => this.saveLocalStorage()),
         catchError(() => of([]))
     )
   }

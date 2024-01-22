@@ -1,0 +1,68 @@
+@import "../../../../styles/globals.scss";
+
+.country {
+  &__wrapper {
+    padding-block: 5rem;
+  }
+  &__back {
+    margin-bottom: 5rem;
+    button {
+      display: inline-flex;
+      align-items: center;
+      gap: .7rem;
+      color: oklch(0% 0 0);
+      background-color: inherit;
+      box-shadow: 2px 2px 4px oklch(0% 0 0/10%), -2px -2px 4px oklch(0% 0 0/10%);
+      border: none;
+      border-radius: .5rem;
+      cursor: pointer;
+      padding: .875rem 2.375rem;
+    }
+  }
+  &__information {
+    display: flex;
+    gap: 7.5rem;
+  }
+  &__flag {
+    flex: 1;
+    img {
+      width: 100%;
+    }
+  }
+  &__texts {
+    flex: 1;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    padding-block: 3rem;
+  }
+  &__title {
+    font-size: 2rem;
+    font-family: $main-family-bold;
+  }
+  &__description {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  &__border {
+    h2 {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1rem;
+      font-size: 1rem;
+
+      span {
+        font-size: 0.8rem;
+        font-family: $main-family-light;
+        font-weight: 400;
+        line-height: 1;
+        box-shadow: 2px 2px 4px oklch(0% 0 0/10%), -2px -2px 4px oklch(0% 0 0/10%);
+        border-radius: .2rem;
+        padding: .5rem 2rem;
+      }
+    }
+  }
+}
+  

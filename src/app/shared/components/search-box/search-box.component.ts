@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Subject, Subscription, debounceTime } from 'rxjs';
 
 
@@ -14,9 +14,12 @@ export class SearchBoxComponent {
   @Output()
   public onDebounce = new EventEmitter<string>();
 
+  @Input()
+  public initialValue:string = '';
+
 
   ngOnInit() {
-    this.debouncer
+    this.debouncerSuscription = this.debouncer
     .pipe(debounceTime(500))
     .subscribe(value => {
       this.onDebounce.emit(value)

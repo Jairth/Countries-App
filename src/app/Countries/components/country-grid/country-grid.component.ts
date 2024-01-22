@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Country } from '../../interface/country';
+import { Country } from '../../interface/country.interface';
 
 @Component({
   selector: 'app-country-grid',
