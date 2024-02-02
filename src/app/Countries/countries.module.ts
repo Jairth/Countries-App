@@ -5,6 +5,7 @@ import { CountryPageComponent } from './pages/country-page/country-page.componen
 import { CountryGridComponent } from './components/country-grid/country-grid.component';
 import { CountriesRoutingModule } from './countries-routing.module';
 import { SharedModule } from '../shared/shared.module';
+import { SkeletonLoadingComponent } from './components/skeleton-loading/skeleton-loading.component';
 
 
 
@@ -14,6 +15,7 @@ import { SharedModule } from '../shared/shared.module';
     CountriesPageComponent,
     CountryPageComponent,
     CountryGridComponent,
+    SkeletonLoadingComponent,
   ],
   imports: [
     CommonModule,
