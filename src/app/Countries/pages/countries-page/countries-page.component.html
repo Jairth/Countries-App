@@ -4,12 +4,12 @@
       <app-search-box (onDebounce)="searchByCountries($event)" />
       <app-filter-box (textFilter)="searchByRegion($event)" />
     </div>
-    @defer (on viewport) {
-    <app-country-grid class="countries__grid" [listCountries]="listCountries" />
-    } @placeholder {
-    <app-skeleton-loading />
-    } @loading (minimum 1000ms){
-    <app-skeleton-loading />
-    }
+    <app-country-grid [listCountries]="listCountries" [isLoadingGrid]="isLoading"/>
   </div>
 </main>
+
+<!-- @placeholder {
+  <app-skeleton-loading />
+} @loading (minimum 1000ms) {
+  <app-skeleton-loading />
+} -->

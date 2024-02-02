@@ -1,4 +1,4 @@
-import { Country } from "./country.interface";
+import { Country } from './country.interface';
 
 export interface CacheStore {
   byCountries: TermCountries;
@@ -7,5 +7,5 @@ export interface CacheStore {
 
 export interface TermCountries {
   // term:string;
-  countries: Country[]
+  countries: Country[];
 }
