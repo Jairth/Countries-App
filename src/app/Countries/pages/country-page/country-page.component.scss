@@ -27,6 +27,8 @@
     flex: 1;
     img {
       width: 100%;
+      min-height: 400px;
+      height: 100%;
     }
   }
   &__texts {

@@ -6,6 +6,7 @@ import { CountryGridComponent } from './components/country-grid/country-grid.com
 import { CountriesRoutingModule } from './countries-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { SkeletonLoadingComponent } from './components/skeleton-loading/skeleton-loading.component';
+import { SkeletonLoadingCountryComponent } from './components/skeleton-loading-country/skeleton-loading-country.component';
 
 
 
@@ -16,6 +17,7 @@ import { SkeletonLoadingComponent } from './components/skeleton-loading/skeleton
     CountryPageComponent,
     CountryGridComponent,
     SkeletonLoadingComponent,
+    SkeletonLoadingCountryComponent,
   ],
   imports: [
     CommonModule,

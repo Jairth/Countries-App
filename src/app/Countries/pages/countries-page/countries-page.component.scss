@@ -10,4 +10,11 @@
   justify-content: space-between;
   flex-wrap: wrap;
   margin-bottom: 3rem;
+  gap: 3rem;
+}
+
+@media (max-width: 685px) {
+  .search__container {
+    width: 100%;
+  }
 }

@@ -23,7 +23,9 @@
             </div>
           </div>
         </div>
-      } @placeholder (minimum 1s) {
+      } @placeholder (minimum 500ms) {
+        <app-skeleton-loading />
+      } @loading (minimum 500ms) {
         <app-skeleton-loading />
       }
     } @empty {
