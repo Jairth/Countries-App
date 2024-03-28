@@ -1,10 +1,6 @@
+<!-- eslint-disable prettier/prettier -->
 <div class="filter__container" (click)="openList($event)">
-  <input
-    class="filter__input"
-    type="text"
-    [placeholder]="currentFilter"
-    readonly
-  />
+  <input class="filter__input" type="text" [placeholder]="currentFilter" readonly />
   <svg
     class="filter__svg"
     width="16"
@@ -18,14 +14,10 @@
       d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708z"
     />
   </svg>
-  <div
-    class="filter__list"
-    [ngClass]="{ active: active }"
-    (click)="currentListFilter($event)"
-  >
+  <div class="filter__list" [ngClass]="{ active: active }" (click)="currentListFilter($event)">
     <ul>
       @for (region of listRegions; track $index) {
-      <li>{{ region }}</li>
+        <li>{{ region }}</li>
       }
     </ul>
   </div>

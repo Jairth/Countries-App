@@ -4,10 +4,9 @@ import { Routes, RouterModule } from '@angular/router';
 import { CountriesPageComponent } from './pages/countries-page/countries-page.component';
 import { CountryPageComponent } from './pages/country-page/country-page.component';
 
-
 const routes: Routes = [
   {
-    path:'countries',
+    path: 'countries',
     component: CountriesPageComponent,
   },
   {
@@ -17,17 +16,11 @@ const routes: Routes = [
   {
     path: '**',
     redirectTo: 'countries',
-  }
-
-]
-
+  },
+];
 
 @NgModule({
-  imports: [
-    RouterModule.forChild( routes )
-  ],
-  exports: [
-    RouterModule
-  ],
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule],
 })
-export class CountriesRoutingModule { }
+export class CountriesRoutingModule {}

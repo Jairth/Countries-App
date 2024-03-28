@@ -4,22 +4,23 @@
   display: flex;
   align-items: center;
   gap: 1.5em;
-  background-color: $light-mode-element;
+  background-color: var(--theme-element);
   box-shadow: 1px 1px 4px rgba(0,0,0,0.1);
   border-radius: .5rem;
   padding: 1em 2em;
 }
 .search__svg {
   font-size: 1rem;
-  fill: $light-mode-input;
+  fill: var(--theme-input);
 }
 .search__input {
+  color: var(--theme-text);
   border: none;
   outline: none;
   background-color: inherit;
 }
 .search__input::placeholder {
-  color: $light-mode-input;
+  color: var(--theme-input);
   transition: color 250ms ease;
 }
 .search__input:focus::placeholder {

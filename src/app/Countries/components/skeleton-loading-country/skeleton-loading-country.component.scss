@@ -1,6 +1,6 @@
 .skeleton__grid {
   display: flex;
-  gap: 7.5rem;
+  gap: clamp(2.5rem, -3.1984rem + 11.8871vi, 7.5rem);
 }
 .skeleton__img {
   flex: 1;

@@ -1,9 +1,41 @@
 /* You can add global styles to this file, and also import other style files */
 @import "./fonts.scss";
 @import "./reset.scss";
-@import "./variables/colors.scss";
+
+:root {
+  --color-black: oklch(19.42% 0.008 229.32);
+  --color-white-light: oklch(98.48% 0 0);
+  --color-white-element: oklch(100% 0 0);
+  --color-black-input: oklch(61.54% 0 0);
+
+  --color-white: oklch(100% 0 0);
+  --color-grey: oklch(28.82% 0.025 243.46);
+  --color-blue-grey: oklch(33.62% 0.028 246.95);
+  --color-lead: oklch(61.54% 0 0);
+}
 
 body {
   font-family: $main-family-light;
-  background-color: $light-mode-background;
+  //Light Mode
+  --theme-text: var(--color-black);
+  --theme-background: var(--color-white-light);
+  --theme-element: var(--color-white-element);
+  --theme-input: var(--color-black-input);
+
+  background-color: var(--theme-background);
+
+  @media (prefers-color-scheme: dark) {
+    //Dark Mode
+    --theme-text: var(--color-white);
+    --theme-background: var(--color-grey);
+    --theme-element: var(--color-blue-grey);
+    --theme-input: var(--color-lead);
+  }
+}
+
+.body:has(#dark:checked) {
+  --theme-text: var(--color-white);
+  --theme-background: var(--color-grey);
+  --theme-element: var(--color-blue-grey);
+  --theme-input: var(--color-lead);
 }

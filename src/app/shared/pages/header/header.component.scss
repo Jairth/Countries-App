@@ -2,7 +2,7 @@
 
 .header {
   box-shadow: 2px 2px 4px oklch(0% 0 0 / 10%);
-  background-color: $light-mode-element;
+  background-color: var(--theme-element);
   &__wrapper {
     display: flex;
     justify-content: space-between;
@@ -12,6 +12,7 @@
   &__title {
     font-size: clamp(1rem, 0.9104rem + 0.3774vw, 1.25rem);
     font-family: $main-family-bold;
+    color: var(--theme-text);
   }
 }
 
@@ -19,10 +20,16 @@
   display: flex;
   align-items: center;
   gap: .5em;
+  background-color: transparent;
+  border: none;
   cursor: pointer;
 
   &__text {
     font-size: clamp(0.875rem, 0.8302rem + 0.1887vw, 1rem);
     font-family: $main-family-semi-bold;
+    color: var(--theme-text);
+  }
+  &__svg {
+    fill: var(--theme-text);
   }
 }

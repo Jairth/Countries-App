@@ -4,7 +4,7 @@
   display: grid;
   grid-template-rows: 12rem 1fr;
   box-shadow: 2px 2px 4px oklch(0% 0 0/10%);
-  background-color: oklch(100% 0 0);
+  background-color: var(--theme-element);
   border-radius: 0.5rem;
   overflow: hidden;
   cursor: pointer;
@@ -27,6 +27,7 @@
   &__title {
     font-family: $main-family-bold;
     font-size: 1.4rem;
+    color: var(--theme-text);
   }
   &__description {
     display: flex;
@@ -35,6 +36,7 @@
     font-family: $main-family-semi-bold;
     & h3 {
       font-size: 1.125rem;
+      color: var(--theme-text);
     }
     & h3 span {
       font-family: $main-family-light;
@@ -48,4 +50,5 @@
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+  color: var(--theme-text);
 }

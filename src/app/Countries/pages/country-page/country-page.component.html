@@ -1,15 +1,15 @@
 @if (isLoading) {
-  <app-skeleton-loading-country />
+  <app-skeleton-loading-country class="skeleton__wrapper" />
 } @else {
   <div class="country">
     <div class="country__wrapper wrapper">
-      @defer (on viewport) {
+      @defer (on immediate) {
         <div class="country__back">
           <button (click)="backPage()">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
+              width="1em"
+              height="1em"
               fill="currentColor"
               class="bi bi-arrow-left"
               viewBox="0 0 16 16"
@@ -67,19 +67,19 @@
               </div>
             </div>
             <div class="country__border">
-              <h2>
-                Border Countries:
+              <strong>Border Countries:</strong>
+              <div class="country__border-btn">
                 @for (border of country?.borders; track $index) {
                   <span>{{ border | titlecase }}</span>
                 }
-              </h2>
+              </div>
             </div>
           </div>
         </div>
       } @placeholder (minimum 500ms) {
-        <app-skeleton-loading-country />
+        <app-skeleton-loading-country class="skeleton__wrapper" />
       } @loading (minimum 500ms) {
-        <app-skeleton-loading-country />
+        <app-skeleton-loading-country class="skeleton__wrapper" />
       }
     </div>
   </div>
