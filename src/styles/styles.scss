@@ -31,11 +31,38 @@ body {
     --theme-element: var(--color-blue-grey);
     --theme-input: var(--color-lead);
   }
+
+  transition: 200ms;
 }
 
-.body:has(#dark:checked) {
+body:has(#dark-mode:checked) {
   --theme-text: var(--color-white);
   --theme-background: var(--color-grey);
   --theme-element: var(--color-blue-grey);
   --theme-input: var(--color-lead);
+}
+
+body:has(#light-mode:checked) {
+  --theme-text: var(--color-black);
+  --theme-background: var(--color-white-light);
+  --theme-element: var(--color-white-element);
+  --theme-input: var(--color-black-input);
+}
+
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

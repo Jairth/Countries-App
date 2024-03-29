@@ -8,6 +8,7 @@
   border-radius: 0.5rem;
   overflow: hidden;
   cursor: pointer;
+  animation: fade-out ease 1000ms;
 
   &__image {
     height: 100%;

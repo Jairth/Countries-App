@@ -1,6 +1,10 @@
 .skeleton__grid {
   display: flex;
   gap: clamp(2.5rem, -3.1984rem + 11.8871vi, 7.5rem);
+
+  @media (width < 500px) {
+    flex-direction: column;
+  }
 }
 .skeleton__img {
   flex: 1;
@@ -9,6 +13,10 @@
   max-width: 500px;
   width: 100%;
   background-color: oklch(76.9% 0.027 229.25);
+
+  @media (width < 500px) {
+    min-height: 280px;
+  }
 }
 .skeleton__card {
   flex: 1;
@@ -48,6 +56,7 @@
 }
 .skeleton__animation {
   animation: skeleton-loading 1s linear infinite alternate;
+  animation-delay: 500ms;
 }
 .skeleton__back {
   margin-bottom: 5rem;
@@ -56,6 +65,10 @@
   width: 13%;
   height: 3rem;
   background-color: oklch(76.9% 0.027 229.25);
+
+  @media (width < 500px) {
+    width: 30%;
+  }
 }
 
 @keyframes skeleton-loading {

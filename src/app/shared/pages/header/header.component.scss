@@ -31,5 +31,16 @@
   }
   &__svg {
     fill: var(--theme-text);
+    margin-block-end: 0.3rem;
   }
+}
+
+.light-mode__svg {
+  fill: var(--theme-text);
+  margin-block-end: 0.3rem;
+}
+
+.modes {
+  display: flex;
+  gap: 1rem;
 }

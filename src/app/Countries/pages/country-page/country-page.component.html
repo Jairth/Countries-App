@@ -1,86 +1,80 @@
-@if (isLoading) {
-  <app-skeleton-loading-country class="skeleton__wrapper" />
-} @else {
-  <div class="country">
-    <div class="country__wrapper wrapper">
-      @defer (on immediate) {
-        <div class="country__back">
-          <button (click)="backPage()">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="1em"
-              height="1em"
-              fill="currentColor"
-              class="bi bi-arrow-left"
-              viewBox="0 0 16 16"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"
-              /></svg
-            >Back
-          </button>
+<div class="country">
+  <div class="country__wrapper wrapper">
+    @defer (on immediate) {
+      <div class="country__back">
+        <button (click)="backPage()">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1em"
+            height="1em"
+            fill="currentColor"
+            class="bi bi-arrow-left"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"
+            /></svg
+          >Back
+        </button>
+      </div>
+      <div class="country__information">
+        <div class="country__flag">
+          <img [src]="country?.flags?.svg" [alt]="country?.name?.common" height="400px" />
         </div>
-        <div class="country__information">
-          <div class="country__flag">
-            <img [src]="country?.flags?.svg" [alt]="country?.name?.common" height="400px" />
-          </div>
-          <div class="country__texts">
-            <h2 class="country__title">{{ country?.name?.common }}</h2>
-            <div class="country__description">
-              <div class="column">
-                <p>
-                  Native Name:
-                  @for (names of country?.name?.nativeName | keyvalue; track $index; let first = $first) {
-                    <span>{{ first ? names.value.common : '' }}</span>
-                  }
-                </p>
-                <p>
-                  Population: <span>{{ country?.population | number }}</span>
-                </p>
-                <p>
-                  Region: <span>{{ country?.region }}</span>
-                </p>
-                <p>
-                  Sub Region: <span>{{ country?.subregion }}</span>
-                </p>
-                <p>
-                  Capital: <span>{{ country?.capital }}</span>
-                </p>
-              </div>
-              <div class="column">
-                <p>
-                  Top Level Domain: <span>{{ country?.tld }}</span>
-                </p>
-                <p>
-                  Currencies:
-                  @for (current of country?.currencies | keyvalue; track $index) {
-                    <span>{{ current.key }}</span>
-                  }
-                </p>
-                <p>
-                  Languages:
-                  @for (language of country?.languages | keyvalue; track $index; let last = $last) {
-                    <span>{{ language.key | titlecase }}{{ !last ? ', ' : '' }}</span>
-                  }
-                </p>
-              </div>
-            </div>
-            <div class="country__border">
-              <strong>Border Countries:</strong>
-              <div class="country__border-btn">
-                @for (border of country?.borders; track $index) {
-                  <span>{{ border | titlecase }}</span>
+        <div class="country__texts">
+          <h2 class="country__title">{{ country?.name?.common }}</h2>
+          <div class="country__description">
+            <div class="column">
+              <p>
+                Native Name:
+                @for (names of country?.name?.nativeName | keyvalue; track $index; let first = $first) {
+                  <span>{{ first ? names.value.common : '' }}</span>
                 }
-              </div>
+              </p>
+              <p>
+                Population: <span>{{ country?.population | number }}</span>
+              </p>
+              <p>
+                Region: <span>{{ country?.region }}</span>
+              </p>
+              <p>
+                Sub Region: <span>{{ country?.subregion }}</span>
+              </p>
+              <p>
+                Capital: <span>{{ country?.capital }}</span>
+              </p>
+            </div>
+            <div class="column">
+              <p>
+                Top Level Domain: <span>{{ country?.tld }}</span>
+              </p>
+              <p>
+                Currencies:
+                @for (current of country?.currencies | keyvalue; track $index) {
+                  <span>{{ current.key }}</span>
+                }
+              </p>
+              <p>
+                Languages:
+                @for (language of country?.languages | keyvalue; track $index; let last = $last) {
+                  <span>{{ language.key | titlecase }}{{ !last ? ', ' : '' }}</span>
+                }
+              </p>
+            </div>
+          </div>
+          <div class="country__border">
+            <strong>Border Countries:</strong>
+            <div class="country__border-btn">
+              @for (border of country?.borders; track $index) {
+                <span>{{ border | titlecase }}</span>
+              }
             </div>
           </div>
         </div>
-      } @placeholder (minimum 500ms) {
-        <app-skeleton-loading-country class="skeleton__wrapper" />
-      } @loading (minimum 500ms) {
-        <app-skeleton-loading-country class="skeleton__wrapper" />
-      }
-    </div>
+      </div>
+    } @placeholder (minimum 500ms) {
+      <app-skeleton-loading-country class="skeleton__wrapper" />
+    }
   </div>
-}
+</div>

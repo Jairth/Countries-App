@@ -17,6 +17,7 @@
       border-radius: .5rem;
       cursor: pointer;
       padding: .875rem 2.375rem;
+      animation: fade-out ease 1000ms;
       svg {
         font-size: 1.5rem;
       }
@@ -25,6 +26,7 @@
   &__information {
     display: flex;
     gap: clamp(2.5rem, -3.1984rem + 11.8871vi, 7.5rem);
+    animation: fade-out ease 1000ms;
 
     @media (max-width: 767px) {
       flex-direction: column;
